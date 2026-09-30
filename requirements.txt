@@ -1,0 +1,7 @@
+# Local CPU baseline: Python 3.11 on Windows. Direct app dependencies are pinned.
+tensorflow==2.15.0
+numpy==1.26.4
+fastapi==0.141.1
+uvicorn[standard]==0.53.0
+python-multipart==0.0.32
+pillow==12.3.0

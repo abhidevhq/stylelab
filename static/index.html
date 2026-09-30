@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>StyleLab — Neural Art Studio</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/"><span>✳</span> stylelab</a>
+    <div class="local-label">● &nbsp;LOCAL AI STUDIO</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <p class="eyebrow">ART MEETS ALGORITHM</p>
+      <h1>Make the ordinary<br><em>extraordinary.</em></h1>
+      <p>Blend your photograph with the feeling of a masterpiece.<br>
+        Your images stay on your computer.</p>
+    </section>
+
+    <section class="workspace">
+      <div class="upload-grid">
+        <article class="upload-card">
+          <div class="card-title">
+            <span>01</span>
+            <div><b>Your photograph</b><small>Choose the scene to transform</small></div>
+          </div>
+          <label class="drop-zone" id="content-zone">
+            <input id="content-file" type="file" accept="image/png,image/jpeg,image/webp">
+            <span class="plus">＋</span>
+            <span>Choose a photograph</span>
+            <small>Click here to browse</small>
+            <img alt="Photograph preview">
+          </label>
+        </article>
+
+        <article class="upload-card">
+          <div class="card-title">
+            <span>02</span>
+            <div><b>Choose a style</b><small>Pick a painting or texture</small></div>
+          </div>
+          <label class="drop-zone" id="style-zone">
+            <input id="style-file" type="file" accept="image/png,image/jpeg,image/webp">
+            <span class="plus">＋</span>
+            <span>Choose a style image</span>
+            <small>Click here to browse</small>
+            <img alt="Style image preview">
+          </label>
+        </article>
+      </div>
+
+      <div class="controls">
+        <div class="slider-label">
+          <span>Style intensity</span>
+          <b id="strength-label">100%</b>
+        </div>
+        <input id="strength" type="range" min="10" max="100" value="100">
+        <div class="slider-ends"><span>Subtle</span><span>Expressive</span></div>
+
+        <button id="create-button">
+          <span>✦</span>
+          <span id="button-label">Create my artwork</span>
+          <b>↗</b>
+        </button>
+
+        <p class="privacy">Runs on your computer · Nothing is uploaded to a website</p>
+        <p id="message" role="status"></p>
+        <div id="progress-panel" class="progress-panel" hidden>
+          <div class="progress-copy">
+            <span id="progress-message">Preparing your images…</span>
+            <b id="progress-percent">0%</b>
+          </div>
+          <progress id="render-progress" max="100" value="0" aria-label="Artwork creation progress"></progress>
+        </div>
+      </div>
+    </section>
+
+    <section id="result-section" class="result-section">
+      <div class="result-heading">
+        <div>
+          <p class="eyebrow">YOUR CREATION</p>
+          <h2>Ready to be seen.</h2>
+        </div>
+        <a id="download-link" download="stylelab-artwork.png">↓ Save image</a>
+      </div>
+      <img id="result-image" alt="Your generated artwork">
+    </section>
+  </main>
+
+  <footer><span>STYLELAB ✳</span><span>Neural style transfer · Made for curious minds</span></footer>
+  <script src="/static/app.js"></script>
+</body>
+</html>
